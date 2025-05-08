@@ -2,6 +2,7 @@ import asyncio
 import os
 
 from agents.extensions.models.litellm_provider import LitellmProvider
+from agents.extensions.visualization import draw_graph
 
 from agents import (
     Agent,
@@ -32,6 +33,8 @@ async def main():
         "What time is it?",
     )
     print(result.final_output)
+
+    draw_graph(agent, filename="graph")
 
 if __name__ == "__main__":
     asyncio.run(main())
